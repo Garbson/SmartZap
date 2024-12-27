@@ -14,16 +14,16 @@
 </template>
 
 <script setup>
-import CallToAction from "./components/CallToAction.vue";
-import FeaturesSection from "./components/FeaturesSection.vue";
-import footerFinal from "./components/footerFinal.vue";
-import HeroSection from "./components/HeroSection.vue";
-import integracoes from "./components/integracoes.vue";
-import NavbarComponent from "./components/NavbarComponent.vue";
-import planos from "./components/planos.vue";
-import suporte from "./components/suporte.vue";
-import TestimonialsSection from "./components/TestimonialsSection.vue";
-import tutorial from "./components/tutorial.vue";
+import CallToAction from "/src/components/CallToAction.vue";
+import FeaturesSection from "/src/components/FeaturesSection.vue";
+import footerFinal from "/src/components/footerFinal.vue";
+import HeroSection from "/src/components/HeroSection.vue";
+import integracoes from "/src/components/integracoes.vue";
+import NavbarComponent from "/src/components/NavbarComponent.vue";
+import planos from "/src/components/planos.vue";
+import suporte from "/src/components/suporte.vue";
+import TestimonialsSection from "/src/components/TestimonialsSection.vue";
+import tutorial from "/src/components/tutorial.vue";
 </script>
 <style>
 /* Estilo para a barra de rolagem */
