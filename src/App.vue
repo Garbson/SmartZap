@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <NavbarComponent />
-    <HeroSection />
     <FeaturesSection />
     <TestimonialsSection />
     <CallToAction />
@@ -17,7 +16,6 @@
 import CallToAction from "/src/components/CallToAction.vue";
 import FeaturesSection from "/src/components/FeaturesSection.vue";
 import footerFinal from "/src/components/footerFinal.vue";
-import HeroSection from "/src/components/HeroSection.vue";
 import integracoes from "/src/components/integracoes.vue";
 import NavbarComponent from "/src/components/NavbarComponent.vue";
 import planos from "/src/components/planos.vue";

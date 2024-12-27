@@ -4,9 +4,10 @@
     style="background: linear-gradient(to right, #313841, #0FA534);"
     dark
   >
-    <v-container>
+
       <v-row
         align="center"
+        class="pa-5"
         width="100%"
         justify="space-between"
       >
@@ -19,7 +20,7 @@
             src="/logo.png"
             alt="Logo"
             max-width="100"
-            max-height="80"
+            max-height="75"
           />
         </v-col>
 
@@ -95,7 +96,6 @@
           </div>
         </v-col>
       </v-row>
-    </v-container>
   </v-app-bar>
 </template>
 

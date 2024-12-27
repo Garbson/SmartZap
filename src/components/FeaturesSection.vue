@@ -4,6 +4,7 @@
     class="py-10 bg-primary"
   >
     <v-row
+     class="mt-md-5"
       justify="center"
       align="center"
     >
@@ -56,6 +57,8 @@
 <script setup></script>
 
 <style scoped>
+
+
 /* Botão piscando */
 .blinking-btn {
   animation: blinking 1s infinite;
