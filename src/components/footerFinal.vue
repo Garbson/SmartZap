@@ -108,7 +108,6 @@
         </v-col>
       </v-row>
 
-      <!-- Linha de Direitos Reservados -->
       <v-row class="mt-10">
         <v-col
           cols="12"
