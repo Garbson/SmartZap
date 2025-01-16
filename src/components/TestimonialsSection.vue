@@ -50,19 +50,22 @@
             height="200px"
             outlined
           >
-            <video
-              src="/crm.mp4"
-              autoplay
-              loop
-              muted
-              class="video-back"
-            />
+            <div class="video-container">
+              <video
+                src="/testeCorretor.mp4"
+                autoplay
+                loop
+                muted
+                class="video-back rounded-xl"
+              />
+            </div>
           </v-card>
         </div>
       </v-col>
     </v-row>
   </v-container>
 </template>
+
 
 <script setup>
 import { computed, ref } from 'vue';
@@ -118,13 +121,23 @@ const flipCard = (index) => {
   transform: rotateY(180deg);
   background-color: #333; /* Cor escura para o verso */
   color: white;
+  overflow: hidden; /* Garante que o vídeo não ultrapasse os limites */
 }
 
-/* Estilo do vídeo no verso */
+/* Estilo do contêiner do vídeo */
+.video-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo do vídeo */
 .video-back {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* O vídeo cobre todo o verso */
-  border-radius: 16px;
+  object-fit: cover !important; /* O vídeo cobre todo o verso */
+  border-radius: 16px !important; /* Arredondamento consistente */
 }
 </style>
