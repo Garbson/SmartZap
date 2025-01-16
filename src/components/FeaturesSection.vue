@@ -4,7 +4,7 @@
     class="py-10 bg-primary"
   >
     <v-row
-     class="mt-md-5"
+      class="mt-md-5"
       justify="center"
       align="center"
     >
@@ -41,7 +41,7 @@
           </p>
           <v-btn
             color="secondary"
-            class="elevate-2 rounded-xl blinking-btn"
+            class="elevate-2 rounded-xl  mt-5 blinking-btn"
             large
             outlined
             href="#"
