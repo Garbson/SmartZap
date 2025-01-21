@@ -14,7 +14,7 @@
         cols="12"
         class="d-flex justify-center"
       >
-        <p class="md:text-h4 text-md text-center font-weight-bold mb-4">
+        <p class="text-h5  text-center font-weight-bold mb-4">
           {{ $t('feature.title') }}
         </p>
       </v-col>
