@@ -19,11 +19,11 @@
       <v-col
         v-for="(feature, i) in features"
         :key="i"
-        cols="12"
+        cols="11"
         md="4"
         lg="4"
         xl="4"
-        class="card-container"
+        class="card-container mx-auto"
       >
         <div
           class="card-wrapper"

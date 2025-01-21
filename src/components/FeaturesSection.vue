@@ -4,7 +4,7 @@
     class="py-10 bg-primary"
   >
     <v-row
-      class="mt-md-5 mx-auto"
+      class="mt-5 mx-auto"
       justify="center"
       align="center"
       style="width: 80% !important; "
@@ -14,7 +14,7 @@
         cols="12"
         class="d-flex justify-center"
       >
-        <p class="text-h4 text-center font-weight-bold mb-4">
+        <p class="md:text-h4 text-md text-center font-weight-bold mb-4">
           {{ $t('feature.title') }}
         </p>
       </v-col>
