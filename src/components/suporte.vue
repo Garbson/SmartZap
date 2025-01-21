@@ -1,7 +1,7 @@
 <template>
   <v-container
     fluid
-    class="py-10 bg-primary"
+    class="py-10 bg-creme"
   >
     <v-row>
       <!-- Coluna Esquerda: Título e Subtítulo -->
@@ -33,7 +33,7 @@
             <v-expansion-panels>
               <v-expansion-panel
                 class="pa-5 rounded-xl"
-                style="background: linear-gradient(to right, #313841, #0FA534);"
+                style="background: linear-gradient(to right, #313841, #0FA558);"
               >
                 <v-expansion-panel-title>
                   <p class="text-body-1 font-weight-bold">

@@ -1,7 +1,7 @@
 <template>
   <v-container
     fluid
-    class="py-10 bg-creme"
+    class="py-10 bg-primary"
   >
     <v-row justify="center">
       <v-col
@@ -32,7 +32,7 @@
         >
           <!-- Frente do card -->
           <v-card
-            class="card-front elevate-2 bg-primary rounded-xl d-flex justify-center align-center flex-column text-center"
+            class="card-front elevate-2 bg-creme rounded-xl d-flex justify-center align-center flex-column text-center pa-3"
             height="200px"
             outlined
           >

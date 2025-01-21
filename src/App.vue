@@ -2,6 +2,7 @@
   <v-app>
     <NavbarComponent />
     <FeaturesSection />
+    <midleText />
     <TestimonialsSection />
     <CallToAction />
     <tutorial />
@@ -13,6 +14,7 @@
 </template>
 
 <script setup>
+import midleText from "./components/midleText.vue";
 import CallToAction from "/src/components/CallToAction.vue";
 import FeaturesSection from "/src/components/FeaturesSection.vue";
 import footerFinal from "/src/components/footerFinal.vue";
@@ -35,17 +37,17 @@ import tutorial from "/src/components/tutorial.vue";
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0FA534; /* Cor do thumb da scrollbar (usando a cor primary do Vuetify) */
+  background: #0FA558; /* Cor do thumb da scrollbar (usando a cor primary do Vuetify) */
   border-radius: 6px; /* Bordas arredondadas para o thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0fa534; /* Cor ao passar o mouse */
+  background: #0FA558; /* Cor ao passar o mouse */
 }
 
 /* Compatibilidade com navegadores que não usam -webkit- */
 .scrollbar {
-  scrollbar-color: #0fa534 #313841; /* Thumb e track */
+  scrollbar-color: #0FA558 #313841; /* Thumb e track */
   scrollbar-width: thin; /* Largura fina */
 }
 </style>

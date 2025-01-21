@@ -4,51 +4,64 @@
     class="py-10 bg-primary"
   >
     <v-row
-      class="mt-md-5"
+      class="mt-md-5 mx-auto"
       justify="center"
       align="center"
+      style="width: 80% !important; "
     >
-      <!-- Coluna da Imagem -->
+      <!-- Coluna do Texto (Topo) -->
       <v-col
         cols="12"
-        md="6"
         class="d-flex justify-center"
       >
-        <v-img
-          src="/teste06.webp"
-          alt="Imagem ilustrativa"
-          max-width="100%"
-          height="400px"
-        />
+        <p class="text-h4 text-center font-weight-bold mb-4">
+          {{ $t('feature.title') }}
+        </p>
       </v-col>
 
-      <!-- Coluna do Texto -->
+      <!-- Coluna do Vídeo -->
       <v-col
         cols="12"
-        md="6"
-        class="d-flex flex-column justify-center"
+        class="d-flex justify-center"
       >
-        <v-card
-          class="p-4 bg-transparent"
-          elevation="0"
-          height="100%"
+        <v-responsive
+          :aspect-ratio="16 / 9"
+          class="mb-4"
         >
-          <p class="text-h4 text-left font-weight-bold mb-4">
-            {{ $t('feature.title') }}
-          </p>
-          <p class="font-weight-regular text-left mb-md-6">
-            {{ $t('feature.description') }}
-          </p>
-          <v-btn
-            color="secondary"
-            class="elevate-2 rounded-xl  mt-5 blinking-btn"
-            large
-            outlined
-            href="#"
-          >
-            {{ $t('feature.button') }}
-          </v-btn>
-        </v-card>
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="w-100 h-100"
+          />
+        </v-responsive>
+      </v-col>
+
+      <!-- Coluna do Texto (Parte Inferior) -->
+      <v-col
+        cols="12"
+        class="d-flex justify-center"
+      >
+        <p class="font-weight-regular text-center">
+          {{ $t('feature.description') }}
+        </p>
+      </v-col>
+
+      <!-- Coluna do Botão -->
+      <v-col
+        cols="12"
+        class="d-flex justify-center"
+      >
+        <v-btn
+          color="secondary"
+          class="elevate-2 rounded-xl blinking-btn"
+          large
+          outlined
+          href="#"
+        >
+          {{ $t('feature.button') }}
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -57,8 +70,6 @@
 <script setup></script>
 
 <style scoped>
-
-
 /* Botão piscando */
 .blinking-btn {
   animation: blinking 1s infinite;
@@ -76,11 +87,20 @@
   }
 }
 
-/* Garantir que os cards tenham a mesma altura */
-.v-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* Garantir que os vídeos sejam responsivos */
+.v-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.v-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
 }
 </style>

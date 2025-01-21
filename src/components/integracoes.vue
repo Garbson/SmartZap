@@ -1,7 +1,7 @@
 <template>
   <v-container
     fluid
-    class="py-10 bg-primary"
+    class="py-10 bg-creme"
   >
     <!-- Título e Subtítulo -->
     <v-row

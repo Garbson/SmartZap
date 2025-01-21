@@ -55,12 +55,9 @@ const messages = {
       question: 'Want to experience the benefits of WaSpeed?',
       button: 'I want to try for free',
       images: [
-        { image: 'https://via.placeholder.com/150?text=Maria' },
-        { image: 'https://via.placeholder.com/150?text=Carlos' },
-        { image: 'https://via.placeholder.com/150?text=Ana' },
-        { image: 'https://via.placeholder.com/150?text=Lucas' },
-        { image: 'https://via.placeholder.com/150?text=Fernanda' },
-        { image: 'https://via.placeholder.com/150?text=João' },
+        { image: '/public/house1.jpg' },
+        { image: '/public/house4.jpg' },
+        { image: '/public/house2.jpg' },
       ],
     },
     setup: {
@@ -231,12 +228,9 @@ const messages = {
       question: 'Quer experimentar os benefícios do WaSpeed?',
       button: 'Quero testar grátis',
       images: [
-        { image: 'https://via.placeholder.com/150?text=Maria' },
-        { image: 'https://via.placeholder.com/150?text=Carlos' },
-        { image: 'https://via.placeholder.com/150?text=Ana' },
-        { image: 'https://via.placeholder.com/150?text=Lucas' },
-        { image: 'https://via.placeholder.com/150?text=Fernanda' },
-        { image: 'https://via.placeholder.com/150?text=João' },
+        { image: '/public/house1.jpg' },
+        { image: '/public/house2.jpg' },
+        { image: '/public/house3.jpg' },
       ],
     },
     setup: {

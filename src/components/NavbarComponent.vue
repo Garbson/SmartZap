@@ -1,7 +1,7 @@
 <template>
   <v-app-bar
     app
-    style="background: linear-gradient(to right, #313841, #0fa534);"
+    style="background: linear-gradient(to right, #313841, #0FA555);"
     dark
   >
     <v-container>

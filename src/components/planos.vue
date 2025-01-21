@@ -1,7 +1,7 @@
 <template>
   <v-container
     fluid
-    class="py-10 bg-creme"
+    class="py-10 bg-primary"
   >
     <!-- Título Centralizado -->
     <v-row justify="center">
@@ -28,13 +28,13 @@
         md="5"
       >
         <v-card
-          class="elevate-2 pa-6 bg-primary rounded-xl"
+          class="elevate-2 pa-6 bg-creme rounded-xl"
           outlined
         >
           <p class="text-h5 font-weight-bold text-center mb-6">
             {{ $t('plans.featuresTitle') }}
           </p>
-          <v-list class="bg-primary">
+          <v-list class="bg-creme">
             <v-list-item
               v-for="(item, index) in features"
               :key="index"
@@ -67,7 +67,7 @@
             cols="12"
           >
             <v-card
-              class="elevate-2 pa-7 rounded-xl bg-primary"
+              class="elevate-2 pa-7 rounded-xl bg-creme"
               outlined
             >
               <v-row>

@@ -2,7 +2,7 @@
   <v-card
     app
     class="text-white"
-    style="background: linear-gradient(to right, #313841, #0FA534);"
+    style="background: linear-gradient(to right, #313841, #0FA558);"
   >
     <v-container>
       <v-row

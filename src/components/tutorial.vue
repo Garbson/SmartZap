@@ -1,7 +1,7 @@
 <template>
   <v-container
     fluid
-    class="py-10 bg-creme"
+    class="py-10 bg-primary"
   >
     <!-- Primeira Row: Título e Cards -->
     <v-row
@@ -27,7 +27,7 @@
         class="d-flex justify-center"
       >
         <v-card
-          class="rounded-xl pa-6 bg-primary"
+          class="rounded-xl pa-6 bg-creme"
           outlined
           width="400px"
           height="220px"
