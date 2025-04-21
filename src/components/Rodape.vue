@@ -51,6 +51,7 @@
               href="https://facebook.com"
               target="_blank"
               class="mr-md-2"
+              variant="text"
             >
               <v-icon size="32">
                 mdi-facebook
@@ -61,6 +62,7 @@
               href="https://twitter.com"
               target="_blank"
               class="mr-md-2"
+              variant="text"
             >
               <v-icon size="32">
                 mdi-twitter
@@ -71,6 +73,7 @@
               href="https://instagram.com"
               target="_blank"
               class="mr-md-2"
+              variant="text"
             >
               <v-icon size="32">
                 mdi-instagram
@@ -81,6 +84,7 @@
               href="https://linkedin.com"
               target="_blank"
               class="mr-md-2"
+              variant="text"
             >
               <v-icon size="32">
                 mdi-linkedin
@@ -91,24 +95,25 @@
               href="https://wa.me/5511999999999"
               target="_blank"
               class="mr-md-2"
+              variant="text"
             >
               <v-icon size="32">
                 mdi-whatsapp
               </v-icon>
             </v-btn>
           </div>
-          <p class="text-body-2">
+          <p class="text-body-2 d-flex align-center">
             <v-icon
-              left
+              class="mr-2"
               color="white"
             >
               mdi-email
             </v-icon>
             {{ $t('footer.contact.email') }}
           </p>
-          <p class="text-body-2">
+          <p class="text-body-2 d-flex align-center">
             <v-icon
-              left
+              class="mr-2"
               color="white"
             >
               mdi-phone
@@ -118,17 +123,59 @@
         </v-col>
       </v-row>
 
-      <v-row class="mt-10">
+      <!-- Rodapé com copyright e créditos do autor -->
+      <v-divider class="my-4 border-opacity-25" />
+
+      <v-row>
         <v-col
           cols="12"
-          class="text-center"
+          class="text-center py-2"
         >
-          <p class="text-body-2">
+          <p class="text-body-2 mb-0">
             {{ $t('footer.copyright') }}
           </p>
-          <p class="text-body-2 mt-2">
-            Site feito por Garbson Souza
-          </p>
+        </v-col>
+      </v-row>
+      
+      <!-- Assinatura do desenvolvedor - versão criativa -->
+      <v-row class="justify-center pt-0 pb-2">
+        <v-col cols="auto">
+          <v-card
+            variant="flat"
+            class="bg-transparent pa-0 rounded-xl"
+          >
+            <div class="d-flex align-center justify-center dev-signature px-4 py-1">
+              <span class="text-caption mr-1">{{ $t('footer.createdBy') }}</span>
+              <v-tooltip location="top">
+                <template #activator="{ props }">
+                  <span 
+                    class="text-caption font-weight-bold gradient-text"
+                    v-bind="props"
+                  >
+                    {{ $t('footer.author') }}
+                  </span>
+                </template>
+                <span>
+                  Full-stack Developer
+                </span>
+              </v-tooltip>
+              <v-btn
+                icon
+                size="x-small"
+                href="https://wa.me/5511999999999"
+                target="_blank"
+                variant="text"
+                class="ml-1 pa-0"
+              >
+                <v-icon
+                  size="20"
+                  color="#25D366"
+                >
+                  mdi-whatsapp
+                </v-icon>
+              </v-btn>
+            </div>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -136,6 +183,9 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 </script>
 
 <style scoped>
@@ -143,7 +193,30 @@
   color: white;
   text-decoration: none;
 }
+
 .text-white a:hover {
   text-decoration: underline;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ffffff, #4CAF50); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+.dev-signature {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.dev-signature:hover {
+  background-color: rgba(15, 165, 88, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 </style>

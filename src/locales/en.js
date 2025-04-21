@@ -194,6 +194,7 @@ export default {
     status: "Online now",
     placeholder: "Type your message...",
     restart: "Restart demo",
+    chooseOption: "Please choose one of the available options so I can better assist you.",
     conversation: [
       {
         step: 'welcome',
@@ -475,5 +476,29 @@ export default {
         allowInput: false
       }
     ]
+  },
+  promoCards: {
+    results: {
+      title: 'Proven Results',
+      conversions: 'in conversions',
+      workload: 'in workload',
+      roi: 'return on investment',
+      successStory: 'Over 2,500 businesses have already transformed their customer service'
+    },
+    offer: {
+      title: 'Limited Time Offer!',
+      description: 'Sign up today and get',
+      discount: '30% OFF',
+      expires: 'This offer expires in',
+      timeUnits: {
+        days: 'days',
+        hours: 'hrs',
+        minutes: 'min',
+        seconds: 'sec'
+      },
+      cta: 'Claim Offer',
+      securePayment: 'Secure Payment',
+      guarantee: '30-day Guarantee'
+    }
   }
 }

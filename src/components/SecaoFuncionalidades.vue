@@ -119,17 +119,81 @@
         md="5" 
         class="d-flex flex-column justify-center"
       >
+        <!-- Card animado chamativo com estatísticas -->
+        <v-card
+          class="animated-promo-card mb-6 pa-6 text-center"
+          elevation="8"
+          style="position: relative; overflow: hidden"
+        >
+          <!-- Efeitos animados em background -->
+          <div class="animated-circles">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+          </div>
+          
+          <h2 class="text-h4 font-weight-bold mb-4">
+            <v-icon
+              large
+              color="secondary"
+              class="mr-2 pulse-icon"
+            >
+              mdi-chart-line
+            </v-icon>
+            {{ $t('promoCards.results.title') }}
+          </h2>
+          
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-value counter">+350%</div>
+              <div class="stat-label">{{ $t('promoCards.results.conversions') }}</div>
+            </div>
+            
+            <v-divider vertical class="mx-4 my-2"></v-divider>
+            
+            <div class="stat-item">
+              <div class="stat-value counter">-75%</div>
+              <div class="stat-label">{{ $t('promoCards.results.workload') }}</div>
+            </div>
+            
+            <v-divider vertical class="mx-4 my-2"></v-divider>
+            
+            <div class="stat-item">
+              <div class="stat-value counter">+420%</div>
+              <div class="stat-label">{{ $t('promoCards.results.roi') }}</div>
+            </div>
+          </div>
+          
+          <v-alert
+            color="secondary"
+            class="mt-4 mb-0 success-alert"
+            dense
+            text
+            border="left"
+          >
+            <div class="d-flex align-center">
+              <v-avatar
+                size="36"
+                class="mr-3"
+              >
+                <v-img src="/teste.gif"></v-img>
+              </v-avatar>
+              <span>{{ $t('promoCards.results.successStory') }}</span>
+            </div>
+          </v-alert>
+        </v-card>
+        
         <!-- Contador regressivo para oferta por tempo limitado -->
         <v-card
           class="promotion-card mb-6 pa-6"
           elevation="6"
         >
           <h2 class="text-h5 font-weight-bold mb-3">
-            Oferta por tempo limitado!
+            {{ $t('promoCards.offer.title') }}
           </h2>
           
           <p class="mb-4">
-            Adquira agora o SmartZap com <span class="text-secondary font-weight-bold">30% de desconto</span>. Esta oferta especial expira em:
+            {{ $t('promoCards.offer.description') }} <span class="text-secondary font-weight-bold">{{ $t('promoCards.offer.discount') }}</span>. {{ $t('promoCards.offer.expires') }}:
           </p>
           
           <div class="countdown-timer">
@@ -138,7 +202,7 @@
                 {{ timer.days }}
               </div>
               <div class="time-label">
-                dias
+                {{ $t('promoCards.offer.timeUnits.days') }}
               </div>
             </div>
             <div class="time-separator">
@@ -149,7 +213,7 @@
                 {{ timer.hours }}
               </div>
               <div class="time-label">
-                horas
+                {{ $t('promoCards.offer.timeUnits.hours') }}
               </div>
             </div>
             <div class="time-separator">
@@ -160,7 +224,7 @@
                 {{ timer.minutes }}
               </div>
               <div class="time-label">
-                minutos
+                {{ $t('promoCards.offer.timeUnits.minutes') }}
               </div>
             </div>
             <div class="time-separator">
@@ -171,7 +235,7 @@
                 {{ timer.seconds }}
               </div>
               <div class="time-label">
-                segundos
+                {{ $t('promoCards.offer.timeUnits.seconds') }}
               </div>
             </div>
           </div>
@@ -187,7 +251,7 @@
             <v-icon left>
               mdi-tag
             </v-icon>
-            APROVEITAR AGORA
+            {{ $t('promoCards.offer.cta') }}
           </v-btn>
           
           <!-- Selos de confiança -->
@@ -199,7 +263,7 @@
               >
                 mdi-shield-check
               </v-icon>
-              <span class="ml-1">Compra segura</span>
+              <span class="ml-1">{{ $t('promoCards.offer.securePayment') }}</span>
             </div>
             <div class="trust-badge mx-2">
               <v-icon
@@ -208,7 +272,7 @@
               >
                 mdi-check-circle
               </v-icon>
-              <span class="ml-1">Garantia de 30 dias</span>
+              <span class="ml-1">{{ $t('promoCards.offer.guarantee') }}</span>
             </div>
           </div>
         </v-card>
@@ -507,5 +571,94 @@ onUnmounted(() => {
   border-radius: 20px;
   padding: 4px 12px;
   font-size: 0.8rem;
+}
+
+/* Estilos para o card animado */
+.animated-promo-card {
+  background: linear-gradient(145deg, #313841, #252a31);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(15, 165, 88, 0.2);
+  animation: circle-animation 10s infinite;
+}
+
+.circle-1 {
+  width: 150px;
+  height: 150px;
+  top: 20%;
+  left: 30%;
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 70%;
+}
+
+.circle-3 {
+  width: 100px;
+  height: 100px;
+  top: 80%;
+  left: 40%;
+}
+
+@keyframes circle-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0FA558;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.success-alert {
+  background-color: rgba(15, 165, 88, 0.1);
+  border-left: 4px solid #0FA558;
+}
+
+.pulse-icon {
+  animation: pulse-animation 2s infinite;
 }
 </style>

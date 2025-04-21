@@ -15,6 +15,8 @@ const messages = {
 
 // Cria a instância do i18n
 const i18n = createI18n({
+  legacy: false, // Use Composition API mode
+  globalInjection: true, // Injeta o $t globalmente
   locale: 'pt', // Idioma padrão
   fallbackLocale: 'en', // Idioma de fallback
   messages, // Traduções

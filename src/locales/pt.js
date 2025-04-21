@@ -194,6 +194,7 @@ export default {
     status: "Online agora",
     placeholder: "Digite sua mensagem...",
     restart: "Reiniciar demonstração",
+    chooseOption: "Por favor, escolha uma das opções disponíveis para que eu possa ajudar melhor.",
     conversation: [
       {
         step: 'welcome',
@@ -475,5 +476,29 @@ export default {
         allowInput: false
       }
     ]
+  },
+  promoCards: {
+    results: {
+      title: 'Resultados Comprovados',
+      conversions: 'em conversões',
+      workload: 'de carga de trabalho',
+      roi: 'de retorno sobre investimento',
+      successStory: 'Mais de 2.500 empresas já transformaram seu atendimento'
+    },
+    offer: {
+      title: 'Promoção por Tempo Limitado!',
+      description: 'Assine hoje e ganhe',
+      discount: '30% DE DESCONTO',
+      expires: 'Esta oferta expira em',
+      timeUnits: {
+        days: 'dias',
+        hours: 'horas',
+        minutes: 'min',
+        seconds: 'seg'
+      },
+      cta: 'Aproveitar Oferta',
+      securePayment: 'Pagamento Seguro',
+      guarantee: 'Garantia de 30 dias'
+    }
   }
 }
