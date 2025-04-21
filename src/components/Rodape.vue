@@ -86,6 +86,16 @@
                 mdi-linkedin
               </v-icon>
             </v-btn>
+            <v-btn
+              icon
+              href="https://wa.me/5511999999999"
+              target="_blank"
+              class="mr-md-2"
+            >
+              <v-icon size="32">
+                mdi-whatsapp
+              </v-icon>
+            </v-btn>
           </div>
           <p class="text-body-2">
             <v-icon
@@ -115,6 +125,9 @@
         >
           <p class="text-body-2">
             {{ $t('footer.copyright') }}
+          </p>
+          <p class="text-body-2 mt-2">
+            Site feito por Garbson Souza
           </p>
         </v-col>
       </v-row>

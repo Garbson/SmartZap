@@ -13,7 +13,7 @@
 
 <script setup>
 import BannerPrincipal from "../components/BannerPrincipal.vue";
-import SecaoDepoimentos from "../components/SecaoDepoimentos.vue";
+// import SecaoDepoimentos from "../components/SecaoDepoimentos.vue";
 import SecaoFAQ from "../components/SecaoFAQ.vue";
 import SecaoFuncionalidades from "../components/SecaoFuncionalidades.vue";
 import SecaoIntegracoes from "../components/SecaoIntegracoes.vue";

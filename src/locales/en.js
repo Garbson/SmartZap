@@ -96,6 +96,9 @@ export default {
     title: 'The license is per user!',
     subtitle: 'Choose the number of users:',
     featuresTitle: 'All plans include:',
+    payOnce: 'Pay once and use all year',
+    selectLicenses: 'Select the number of licenses:',
+    annualLicense: 'Annual Premium License',
     features: [
       'Support from Mon to Sat',
       'Integration with Google Calendar',
@@ -169,6 +172,8 @@ export default {
       phone: '+55 11 99999-9999',
     },
     copyright: '© 2024 SmartZap. All rights reserved.',
+    createdBy: 'Created by',
+    author: 'Garbson Souza',
   },
   cta: {
     tryFree: 'Try for Free',
@@ -178,5 +183,297 @@ export default {
     description: 'Unleash your sales superpowers with SmartZap! Automate processes, work smarter, and achieve extraordinary results. Less repetitive effort, more productivity and closed deals with the efficiency that only SmartZap brings to you!',
     buttonText: 'Try It Now',
     videoCaption: 'See how it works in practice! SmartZap automates your WhatsApp conversations, enabling 24-hour service, automatic responses, and intelligent customer tracking.',
+    cta: 'Transform Your Customer Service Today',
+    watchDemo: 'See how it works in 45 seconds',
+    dataProtected: 'Protected data',
+    users: 'users',
+    guarantee: '30-day money-back guarantee',
   },
+  demo: {
+    title: "SmartZap Support",
+    status: "Online now",
+    placeholder: "Type your message...",
+    restart: "Restart demo",
+    conversation: [
+      {
+        step: 'welcome',
+        messages: [
+          {
+            type: 'received',
+            text: 'Hello! 👋 Welcome to SmartZap. How can I help you today?',
+            time: '10:01'
+          }
+        ],
+        options: [
+          { text: 'I want to know about the product', nextStep: 'about-product' },
+          { text: 'How does the integration work?', nextStep: 'integration' },
+          { text: 'What is the price?', nextStep: 'pricing' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'about-product',
+        messages: [
+          {
+            type: 'sent',
+            text: 'I want to know about the product',
+            time: '10:02'
+          },
+          {
+            type: 'received',
+            text: 'SmartZap is a complete WhatsApp automation solution that allows you to automatically serve customers, send mass messages, create chatbots, and integrate with your existing systems.',
+            time: '10:02'
+          }
+        ],
+        options: [
+          { text: 'What are the main features?', nextStep: 'features' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'features',
+        messages: [
+          {
+            type: 'sent',
+            text: 'What are the main features?',
+            time: '10:03'
+          },
+          {
+            type: 'received',
+            text: '✅ Customer service automation\n✅ Mass messaging\n✅ Intelligent chatbot\n✅ CRM integrations\n✅ Multiple attendants\n✅ Conversation analysis',
+            time: '10:03'
+          }
+        ],
+        options: [
+          { text: 'How do I start using it?', nextStep: 'start-using' },
+          { text: 'How much does it cost?', nextStep: 'pricing' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'start-using',
+        messages: [
+          {
+            type: 'sent',
+            text: 'How do I start using it?',
+            time: '10:04'
+          },
+          {
+            type: 'received',
+            text: 'Starting with SmartZap is quick and easy!\n\n1. Create your account on our website\n2. Download the Chrome extension\n3. Connect it to your WhatsApp Web\n4. Start using all the features!',
+            time: '10:04'
+          }
+        ],
+        options: [
+          { text: 'I want to try it', nextStep: 'trial' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'integration',
+        messages: [
+          {
+            type: 'sent',
+            text: 'How does the integration work?',
+            time: '10:02'
+          },
+          {
+            type: 'received',
+            text: 'Our integration is simple! SmartZap connects with major platforms like Google Sheets, CRM, ERP, and e-commerce systems. Just authorize the connection and start using it.',
+            time: '10:02'
+          }
+        ],
+        options: [
+          { text: 'Which platforms integrate?', nextStep: 'platforms' },
+          { text: 'Is technical knowledge required?', nextStep: 'technical' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'technical',
+        messages: [
+          {
+            type: 'sent',
+            text: 'Is technical knowledge required?',
+            time: '10:04'
+          },
+          {
+            type: 'received',
+            text: 'No! SmartZap was designed to be super easy to use. Our interface is intuitive and you don\'t need any programming knowledge to configure automations and integrations.',
+            time: '10:04'
+          }
+        ],
+        options: [
+          { text: 'How can I get support?', nextStep: 'support' },
+          { text: 'Back to integrations', nextStep: 'integration' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'support',
+        messages: [
+          {
+            type: 'sent',
+            text: 'How can I get support?',
+            time: '10:05'
+          },
+          {
+            type: 'received',
+            text: 'We offer support via chat, email, and tutorial videos. Our average response time is less than 2 hours on business days. Most customers can resolve their questions with our detailed documentation.',
+            time: '10:05'
+          }
+        ],
+        options: [
+          { text: 'I want to try it', nextStep: 'trial' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'platforms',
+        messages: [
+          {
+            type: 'sent',
+            text: 'Which platforms integrate?',
+            time: '10:03'
+          },
+          {
+            type: 'received',
+            text: 'We integrate with:\n- Google Sheets\n- HubSpot\n- Pipedrive\n- Shopify\n- WooCommerce\n- ERP Systems\n- Custom APIs',
+            time: '10:03'
+          }
+        ],
+        options: [
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'pricing',
+        messages: [
+          {
+            type: 'sent',
+            text: 'What is the price?',
+            time: '10:02'
+          },
+          {
+            type: 'received',
+            text: 'SmartZap has an annual license fee of $59 per user, with no monthly fees! You can add as many users as you need to your account.',
+            time: '10:02'
+          }
+        ],
+        options: [
+          { text: 'Is there a trial period?', nextStep: 'trial' },
+          { text: 'How do I purchase?', nextStep: 'purchase' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'purchase',
+        messages: [
+          {
+            type: 'sent',
+            text: 'How do I purchase?',
+            time: '10:05'
+          },
+          {
+            type: 'received',
+            text: 'Purchasing is simple! Visit our website, choose the number of licenses you want, and complete the payment via credit card or PayPal. After confirmation, you\'ll receive activation keys by email within 5 minutes.',
+            time: '10:05'
+          }
+        ],
+        options: [
+          { text: 'I want to try first', nextStep: 'trial' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'trial',
+        messages: [
+          {
+            type: 'sent',
+            text: 'Is there a trial period?',
+            time: '10:03'
+          },
+          {
+            type: 'received',
+            text: 'Yes! We offer a 7-day free trial with all features. And the best part: no credit card required to start.',
+            time: '10:03'
+          }
+        ],
+        options: [
+          { text: 'I want to start the trial now!', nextStep: 'start-trial' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'start-trial',
+        messages: [
+          {
+            type: 'sent',
+            text: 'I want to start the trial now!',
+            time: '10:04'
+          },
+          {
+            type: 'received',
+            text: 'Great choice! To start your free trial, just click the button below and fill out a brief registration form. In just a few minutes, you\'ll be using SmartZap!',
+            time: '10:04'
+          }
+        ],
+        options: [
+          { text: 'Thank you for the information!', nextStep: 'thanks' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true,
+        showTrial: true
+      },
+      {
+        step: 'thanks',
+        messages: [
+          {
+            type: 'sent',
+            text: 'Thank you for the information!',
+            time: '10:05'
+          },
+          {
+            type: 'received',
+            text: 'You\'re welcome! We\'re here to help. Do you have any other questions I can answer?',
+            time: '10:05'
+          }
+        ],
+        options: [
+          { text: 'No, thank you.', nextStep: 'goodbye' },
+          { text: 'Back to main menu', nextStep: 'welcome' }
+        ],
+        allowInput: true
+      },
+      {
+        step: 'goodbye',
+        messages: [
+          {
+            type: 'sent',
+            text: 'No, thank you.',
+            time: '10:06'
+          },
+          {
+            type: 'received',
+            text: 'It was a pleasure helping you! If you need more information, just come back to this chat. Have a great day! 😊',
+            time: '10:06'
+          }
+        ],
+        options: [
+          { text: 'Restart conversation', nextStep: 'welcome' }
+        ],
+        allowInput: false
+      }
+    ]
+  }
 }

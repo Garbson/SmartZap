@@ -4,7 +4,35 @@
  * Configures SASS variables and Vuetify overwrites
  */
 
-// https://vuetifyjs.com/features/sass-variables/`
+// https://vuetifyjs.com/features/sass-variables/
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+
+/* Classes para efeitos de animação de entrada */
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scrolled-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilos que não conflitam com o Vuetify */
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Otimização específica para imagens */
+img.optimized {
+  max-width: 100%;
+  height: auto;
+}

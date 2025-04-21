@@ -9,8 +9,8 @@
         cols="12"
         class="text-center mb-4"
       >
-        <p class="text-h4 font-weight-bold">
-          Pague uma vez e utilize o Ano todo
+        <p class="text-h4 font-weight-bold text-white">
+          {{ $t('plans.payOnce') }}
         </p>
       </v-col>
     </v-row>
@@ -24,22 +24,27 @@
       >
         <!-- Card Principal -->
         <v-card
-          class="elevate-2 pa-6 bg-creme rounded-xl mb-6 d-flex flex-column align-center"
+          class="pa-6 bg-surface rounded-xl mb-6 d-flex flex-column align-center"
           width="100%"
-          outlined
+          variant="elevated"
+          elevation="2"
         >
-          <div style="border: 2px solid #313841; border-radius: 20px; padding: 50px; width: 700px;">
+          <v-card 
+            class="pa-10 rounded-xl border border-3 d-flex flex-column align-center" 
+            max-width="700"
+            variant="outlined"
+          >
             <p class="text-h5 font-weight-bold mb-4">
-              Licença Premium Anual
+              {{ $t('plans.annualLicense') }}
             </p>
 
             <!-- Card interno para selecionar quantidade -->
             <v-card
               class="pa-4 d-flex flex-column mb-6 rounded-xl align-center"
-              outlined
+              variant="outlined"
             >
               <p class="text-subtitle-1 mb-4">
-                Selecione a quantidade de licenças:
+                {{ $t('plans.selectLicenses') }}
               </p>
               <!-- Controle de quantidade com + e - -->
               <v-row
@@ -51,6 +56,7 @@
                   <v-btn
                     icon
                     color="secondary"
+                    variant="elevated"
                     @click="decrementLicenses"
                   >
                     <v-icon>mdi-minus</v-icon>
@@ -67,6 +73,7 @@
                   <v-btn
                     icon
                     color="secondary"
+                    variant="elevated"
                     @click="incrementLicenses"
                   >
                     <v-icon>mdi-plus</v-icon>
@@ -93,11 +100,18 @@
                   <v-btn
                     color="secondary"
                     class="rounded-xl px-8"
-                    large
+                    size="large"
                     elevation="2"
                     href="https://chromewebstore.google.com/detail/smartzap/lecapbnkojjbcmpgojanclnilcnemjpk"
                     target="_blank"
+                    variant="elevated"
                   >
+                    <v-icon
+                      start
+                      class="mr-2"
+                    >
+                      mdi-download
+                    </v-icon>
                     {{ $t('plans.button') }}
                   </v-btn>
                 </v-col>
@@ -105,25 +119,25 @@
             </v-card>
 
             <!-- Lista de recursos - Centralizada com texto alinhado à esquerda -->
-            <div
-              style="width: 300px;"
-              class="d-flex flex-column"
+            <v-list
+              class="bg-transparent"
+              max-width="300"
+              density="compact"
             >
-              <div 
+              <v-list-item
                 v-for="(item, index) in features" 
                 :key="index"
-                class="d-flex align-start mb-2 text-left"
+                class="px-0 py-1"
               >
-                <v-icon
-                  color="secondary"
-                  class="mr-3"
-                >
-                  mdi-check-circle
-                </v-icon>
-                <span>{{ item }}</span>
-              </div>
-            </div>
-          </div>
+                <template #prepend>
+                  <v-icon color="secondary">
+                    mdi-check-circle
+                  </v-icon>
+                </template>
+                <v-list-item-title>{{ item }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-card>
         </v-card>
       </v-col>
     </v-row>
@@ -135,7 +149,7 @@ import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 // Obter as funcionalidades traduzidas
-const { tm } = useI18n();
+const { tm, t } = useI18n();
 const features = computed(() => tm('plans.features'));
 
 // Gerenciar a quantidade de licenças selecionada

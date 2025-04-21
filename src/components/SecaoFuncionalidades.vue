@@ -1,10 +1,14 @@
 <template>
   <v-container
+    id="funcionalidades"
     fluid
     class="py-10 bg-primary"
   >
     <!-- Título da seção -->
-    <v-row justify="center">
+    <v-row
+      v-scrolls-in
+      justify="center"
+    >
       <v-col
         cols="12"
         class="text-center mb-6"
@@ -15,8 +19,9 @@
       </v-col>
     </v-row>
 
-    <!-- Layout principal: uma row com duas colunas (7-5) -->
+    <!-- Layout principal -->
     <v-row
+      v-scrolls-in
       class="mx-auto"
       style="width: 90%"
     >
@@ -41,7 +46,7 @@
           x-large
           rounded
           elevation="3"
-          class="mt-4 px-8 white--text try-free-btn"
+          class="mt-4 px-8 white--text enhanced-btn"
         >
           {{ $t('cta.tryFree') }}
         </v-btn>
@@ -56,7 +61,7 @@
           <v-card
             v-for="(feature, i) in displayedFeatures"
             :key="i"
-            class="mb-3 pa-4 rounded-xl feature-card"
+            class="mb-3 pa-4 rounded-xl feature-card hover-effect"
             :class="{ 'active-card': selectedCard === i }"
             elevation="2"
             hover
@@ -80,12 +85,142 @@
         </div>
       </v-col>
     </v-row>
+
+    <!-- Seção de demonstração interativa -->
+    <v-row
+      v-scrolls-in
+      class="my-10 justify-center"
+    >
+      <v-col
+        cols="12"
+        class="text-center mb-4"
+      >
+        <p class="text-h4 font-weight-bold">
+          Experimente o SmartZap em ação
+        </p>
+        <p
+          class="text-subtitle-1 mx-auto"
+          style="max-width: 700px"
+        >
+          Veja como funciona a conversa automatizada com o SmartZap. Interaja com o chat abaixo para simular uma experiência real.
+        </p>
+      </v-col>
+      
+      <v-col 
+        cols="12" 
+        md="5" 
+        class="d-flex justify-center"
+      >
+        <DemonstracaoInterativa />
+      </v-col>
+      
+      <v-col 
+        cols="12" 
+        md="5" 
+        class="d-flex flex-column justify-center"
+      >
+        <!-- Contador regressivo para oferta por tempo limitado -->
+        <v-card
+          class="promotion-card mb-6 pa-6"
+          elevation="6"
+        >
+          <h2 class="text-h5 font-weight-bold mb-3">
+            Oferta por tempo limitado!
+          </h2>
+          
+          <p class="mb-4">
+            Adquira agora o SmartZap com <span class="text-secondary font-weight-bold">30% de desconto</span>. Esta oferta especial expira em:
+          </p>
+          
+          <div class="countdown-timer">
+            <div class="time-unit">
+              <div class="time-value">
+                {{ timer.days }}
+              </div>
+              <div class="time-label">
+                dias
+              </div>
+            </div>
+            <div class="time-separator">
+              :
+            </div>
+            <div class="time-unit">
+              <div class="time-value">
+                {{ timer.hours }}
+              </div>
+              <div class="time-label">
+                horas
+              </div>
+            </div>
+            <div class="time-separator">
+              :
+            </div>
+            <div class="time-unit">
+              <div class="time-value">
+                {{ timer.minutes }}
+              </div>
+              <div class="time-label">
+                minutos
+              </div>
+            </div>
+            <div class="time-separator">
+              :
+            </div>
+            <div class="time-unit">
+              <div class="time-value">
+                {{ timer.seconds }}
+              </div>
+              <div class="time-label">
+                segundos
+              </div>
+            </div>
+          </div>
+          
+          <v-btn
+            color="secondary"
+            class="mt-6 white--text pulse-btn"
+            x-large
+            block
+            elevation="2"
+            href="#planos"
+          >
+            <v-icon left>
+              mdi-tag
+            </v-icon>
+            APROVEITAR AGORA
+          </v-btn>
+          
+          <!-- Selos de confiança -->
+          <div class="d-flex justify-center mt-4">
+            <div class="trust-badge mx-2">
+              <v-icon
+                color="amber"
+                small
+              >
+                mdi-shield-check
+              </v-icon>
+              <span class="ml-1">Compra segura</span>
+            </div>
+            <div class="trust-badge mx-2">
+              <v-icon
+                color="green"
+                small
+              >
+                mdi-check-circle
+              </v-icon>
+              <span class="ml-1">Garantia de 30 dias</span>
+            </div>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import DemonstracaoInterativa from './DemonstracaoInterativa.vue';
 
 // Configuração do i18n
 const { tm } = useI18n();
@@ -119,6 +254,48 @@ const displayedFeatures = computed(() => {
 const currentVideo = computed(() => {
   return videoMap.value[selectedCard.value] || videoMap.value[0];
 });
+
+// Temporizador de contagem regressiva
+const timer = ref({
+  days: '07',
+  hours: '23',
+  minutes: '59',
+  seconds: '59'
+});
+
+let countdown = null;
+
+// Data limite (7 dias a partir de agora)
+const getEndDate = () => {
+  const now = new Date();
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate() + 7);
+};
+
+const endDate = getEndDate();
+
+// Atualizar temporizador
+const updateTimer = () => {
+  const now = new Date();
+  const diff = endDate - now;
+  
+  if (diff <= 0) {
+    // Tempo expirado, redefine para 7 dias
+    Object.assign(endDate, getEndDate());
+    return;
+  }
+  
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  
+  timer.value = {
+    days: days.toString().padStart(2, '0'),
+    hours: hours.toString().padStart(2, '0'),
+    minutes: minutes.toString().padStart(2, '0'),
+    seconds: seconds.toString().padStart(2, '0')
+  };
+};
 
 function selectCard(index) {
   selectedCard.value = index;
@@ -168,6 +345,19 @@ function getIconForFeature(title) {
 
   return iconMap[title] || 'mdi-star'; // Ícone padrão caso não encontre
 }
+
+onMounted(() => {
+  // Iniciar temporizador de contagem regressiva
+  updateTimer();
+  countdown = setInterval(updateTimer, 1000);
+});
+
+onUnmounted(() => {
+  // Limpar temporizador
+  if (countdown) {
+    clearInterval(countdown);
+  }
+});
 </script>
 
 <style scoped>
@@ -210,9 +400,7 @@ function getIconForFeature(title) {
   background-color: rgba(15, 165, 88, 0.1);
 }
 
-/* Removendo estilos da scrollbar que não será mais usada */
-
-.try-free-btn {
+.enhanced-btn {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: none;
@@ -220,8 +408,104 @@ function getIconForFeature(title) {
   transition: all 0.3s ease;
 }
 
-.try-free-btn:hover {
+.enhanced-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(15, 165, 88, 0.3);
+}
+
+/* Estilos para o card de promoção */
+.promotion-card {
+  background: linear-gradient(145deg, #313841, #252a31);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promotion-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(15, 165, 88, 0.1) 0%, rgba(49, 56, 65, 0) 70%);
+  z-index: 0;
+  animation: shine 15s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.time-value {
+  background-color: #0FA558;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.time-label {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: #ccc;
+}
+
+.time-separator {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: -10px;
+}
+
+/* Pulsar botão */
+.pulse-btn {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(15, 165, 88, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(15, 165, 88, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(15, 165, 88, 0);
+  }
+}
+
+/* Selos de confiança */
+.trust-badge {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
 }
 </style>
