@@ -1,13 +1,26 @@
 /**
- * router/index.ts
+ * router/index.js
  *
- * Automatic routes for `./src/pages/*.vue`
+ * Configuração manual de rotas
  */
 
 // Composables
-import { createRouter, createWebHistory } from 'vue-router/auto'
 import { setupLayouts } from 'virtual:generated-layouts'
-import { routes } from 'vue-router/auto-routes'
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../views/Home.vue'
+
+// Definindo as rotas manualmente
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+    meta: {
+      layout: 'default'
+    }
+  },
+  // Adicione outras rotas aqui conforme necessário
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

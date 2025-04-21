@@ -1,5 +1,4 @@
 <template>
-  <!-- O conteúdo será renderizado dentro do layout padrão -->
   <div>
     <BannerPrincipal />
     <SecaoRecursos />
