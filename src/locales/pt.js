@@ -3,6 +3,11 @@ export default {
     about: 'Sobre Nós',
     properties: 'Imóveis',
     contact: 'Contato',
+    resources: 'Recursos',
+    features: 'Funcionalidades',
+    plans: 'Planos',
+    integrations: 'Integrações',
+    faq: 'FAQ'
   },
   content: {
     welcome: 'Bem-vindo à nossa plataforma!',
@@ -195,6 +200,8 @@ export default {
     placeholder: "Digite sua mensagem...",
     restart: "Reiniciar demonstração",
     chooseOption: "Por favor, escolha uma das opções disponíveis para que eu possa ajudar melhor.",
+    experienceTitle: "Experimente o SmartZap em ação",
+    experienceDescription: "Veja como funciona a conversa automatizada com o SmartZap. Interaja com o chat abaixo para simular uma experiência real.",
     conversation: [
       {
         step: 'welcome',

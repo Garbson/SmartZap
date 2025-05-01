@@ -1,5 +1,6 @@
 <template>
   <v-container
+    id="planos"
     fluid
     class="py-10 bg-primary"
   >

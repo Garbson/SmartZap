@@ -25,33 +25,6 @@
       class="mx-auto"
       style="width: 90%"
     >
-      <!-- Coluna do Vídeo (7 colunas) -->
-      <v-col
-        cols="12"
-        md="7"
-        class="d-flex flex-column justify-center align-center"
-      >
-        <div class="video-display rounded-xl overflow-hidden">
-          <video
-            :src="currentVideo"
-            autoplay
-            loop
-            muted
-            controls
-            class="feature-video rounded-xl"
-          />
-        </div>
-        <v-btn
-          color="secondary"
-          x-large
-          rounded
-          elevation="3"
-          class="mt-4 px-8 white--text enhanced-btn"
-        >
-          {{ $t('cta.tryFree') }}
-        </v-btn>
-      </v-col>
-
       <!-- Coluna dos Cards (5 colunas) -->
       <v-col
         cols="12"
@@ -84,6 +57,33 @@
           </v-card>
         </div>
       </v-col>
+
+      <!-- Coluna do Vídeo (7 colunas) -->
+      <v-col
+        cols="12"
+        md="7"
+        class="d-flex flex-column justify-center align-center"
+      >
+        <div class="video-display rounded-xl overflow-hidden">
+          <video
+            :src="currentVideo"
+            autoplay
+            loop
+            muted
+            controls
+            class="feature-video rounded-xl"
+          />
+        </div>
+        <v-btn
+          color="secondary"
+          x-large
+          rounded
+          elevation="3"
+          class="mt-4 px-8 white--text enhanced-btn"
+        >
+          {{ $t('cta.tryFree') }}
+        </v-btn>
+      </v-col>
     </v-row>
 
     <!-- Seção de demonstração interativa -->
@@ -96,13 +96,13 @@
         class="text-center mb-4"
       >
         <p class="text-h4 font-weight-bold">
-          Experimente o SmartZap em ação
+          {{ $t('demo.experienceTitle') }}
         </p>
         <p
           class="text-subtitle-1 mx-auto"
           style="max-width: 700px"
         >
-          Veja como funciona a conversa automatizada com o SmartZap. Interaja com o chat abaixo para simular uma experiência real.
+          {{ $t('demo.experienceDescription') }}
         </p>
       </v-col>
       
@@ -127,9 +127,9 @@
         >
           <!-- Efeitos animados em background -->
           <div class="animated-circles">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
+            <div class="circle circle-1" />
+            <div class="circle circle-2" />
+            <div class="circle circle-3" />
           </div>
           
           <h2 class="text-h4 font-weight-bold mb-4">
@@ -145,22 +145,40 @@
           
           <div class="stats-container">
             <div class="stat-item">
-              <div class="stat-value counter">+350%</div>
-              <div class="stat-label">{{ $t('promoCards.results.conversions') }}</div>
+              <div class="stat-value counter">
+                +350%
+              </div>
+              <div class="stat-label">
+                {{ $t('promoCards.results.conversions') }}
+              </div>
             </div>
             
-            <v-divider vertical class="mx-4 my-2"></v-divider>
+            <v-divider
+              vertical
+              class="mx-4 my-2"
+            />
             
             <div class="stat-item">
-              <div class="stat-value counter">-75%</div>
-              <div class="stat-label">{{ $t('promoCards.results.workload') }}</div>
+              <div class="stat-value counter">
+                -75%
+              </div>
+              <div class="stat-label">
+                {{ $t('promoCards.results.workload') }}
+              </div>
             </div>
             
-            <v-divider vertical class="mx-4 my-2"></v-divider>
+            <v-divider
+              vertical
+              class="mx-4 my-2"
+            />
             
             <div class="stat-item">
-              <div class="stat-value counter">+420%</div>
-              <div class="stat-label">{{ $t('promoCards.results.roi') }}</div>
+              <div class="stat-value counter">
+                +420%
+              </div>
+              <div class="stat-label">
+                {{ $t('promoCards.results.roi') }}
+              </div>
             </div>
           </div>
           
@@ -176,7 +194,7 @@
                 size="36"
                 class="mr-3"
               >
-                <v-img src="/teste.gif"></v-img>
+                <v-img src="/teste.gif" />
               </v-avatar>
               <span>{{ $t('promoCards.results.successStory') }}</span>
             </div>

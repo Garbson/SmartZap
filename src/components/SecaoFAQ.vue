@@ -1,5 +1,6 @@
 <template>
   <v-container
+    id="faq"
     fluid
     class="py-10 bg-creme"
   >

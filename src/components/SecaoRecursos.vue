@@ -1,5 +1,6 @@
 <template>
   <v-container
+    id="recursos"
     fluid
     class="py-10 bg-creme"
   >
@@ -14,7 +15,7 @@
         class="d-flex justify-center"
       >
         <v-card
-          class="p-4 bg-transparent"
+          class="pa-md-10 pa-mb-0 bg-transparent "
           elevation="0"
           width="100%"
         >
@@ -22,6 +23,30 @@
             justify="center"
             align="center"
           >
+            <!-- Coluna do Texto -->
+            <v-col
+              cols="12"
+              md="6"
+              class="d-flex flex-column justify-center"
+            >
+              <p class="text-h4 text-md-left text-center font-weight-bold mb-4">
+                {{ $t('feature.title') }}
+              </p>
+              <p class="font-weight-regular text-md-left text-center mb-md-6">
+                {{ $t('feature.description') }}
+              </p>
+
+              <!-- Botão -->
+              <v-btn
+                color="secondary"
+                class="elevate-2 mt-3 rounded-xl blinking-btn"
+                large
+                outlined
+                href="#"
+              >
+                {{ $t('feature.button') }}
+              </v-btn>
+            </v-col>
             <!-- Coluna da Imagem -->
             <v-col
               cols="12"
@@ -34,31 +59,6 @@
                 max-width="100%"
                 height="300px"
               />
-            </v-col>
-
-            <!-- Coluna do Texto -->
-            <v-col
-              cols="12"
-              md="6"
-              class="d-flex flex-column justify-center"
-            >
-              <p class="text-h4 text-left font-weight-bold mb-4">
-                {{ $t('feature.title') }}
-              </p>
-              <p class="font-weight-regular text-left mb-md-6">
-                {{ $t('feature.description') }}
-              </p>
-
-              <!-- Botão -->
-              <v-btn
-                color="secondary"
-                class="elevate-2 rounded-xl blinking-btn"
-                large
-                outlined
-                href="#"
-              >
-                {{ $t('feature.button') }}
-              </v-btn>
             </v-col>
           </v-row>
         </v-card>
