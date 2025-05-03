@@ -23,18 +23,16 @@
           "
         />
 
-        <!-- Video Principal (Apenas com sua capa nativa) -->
-        <div
-          class="rounded-xl pa-4 mb-6 text-center position-relative video-container"
-        >
+        <!-- Video Principal com Cloudinary otimizado -->
+        <div class="video-container">
           <video
-            src="/videoPrincipal.mp4"
+            src="https://res.cloudinary.com/dvuwndt7x/video/upload/v1746230966/videoPrincipal_dxpvuw.mp4"
             controls
-            width="100%"
-            height="auto"
-            class="rounded-lg video-principal"
-            preload="metadata"
-          />
+            class="video-principal"
+            preload="auto"
+            controlsList="nodownload"
+            playsinline
+          ></video>
         </div>
 
         <!-- Texto descritivo -->
